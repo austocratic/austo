@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/austocratic/austo/issues"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "homepage": "https://github.com/austocratic/austo#readme"
 }
