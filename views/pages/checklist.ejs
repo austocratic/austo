@@ -1,0 +1,151 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: monaco, monospace;
+      margin:50px;
+      font-size:100%;
+      line-height:1.5;
+      font-family: Roboto;
+      background:rgb(25,159,158); 
+      }
+    
+    .wrapper {
+      width:600px;
+      margin:50px auto;
+      background:#fff;
+      padding:2em;
+    }
+
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .collapsible:hover {
+      background-color: #ccc;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Cheat Sheet</h1>
+
+
+    <button type="button" class="collapsible">#1 Configure List</button>
+    <div class="content">
+        CP Count: <p id="output"></p>
+        Sisters (bloody rose)
+        <ul>
+          <li>canoness</li>
+          <form>
+            <input type="checkbox" name="canoness1" value="Beneficense" id="canoness1" onclick="updateCount(this)"><label for="canoness1">Relic - Beneficense</label><br>
+            <input type="checkbox" name="canoness2" value="RighteousRage" id="canoness2" onclick="updateCount(this)"><label for="canoness2">WT - Righteous Rage</label>
+          </form>
+          <li>canoness</li>
+          <form>
+              <input type="checkbox" name="canoness3" value="LitaniesOfFaith" id="canoness3" onclick="updateCount(this)"><label for="canoness3">Relic - Litanies of Faith</label><br>
+              <input type="checkbox" name="canoness4" value="BeaconOfFaith" id="canoness4" onclick="updateCount(this)"><label for="canoness4">WT - Beacon of Faith</label>  
+            </form>
+          <li>celestine</li>
+          <li>2x zephyrim (squads of 8 with banners)</li>
+          <li>mortifiers (squad of 2)</li>
+          <li>2x repentia (squads of 8)</li>
+          <li>preacher</li>
+          <li>2x rhino</li>
+          <li>3x minimum battle sisters</li>
+        </ul>
+        Guard (tallarn)
+        <ul>
+          <li>Tank commander (battle cannon & lascannon)</li>
+          <form>
+              <input type="checkbox" name="tankCommander1" value="HammerOfSunderance" id="tankCommander1" onclick="updateCount(this)"><label for="tankCommander1">Relic - Hammer of Sunderance</label><br>
+          </form>
+          <li>Tank commander (battle cannon & lascannon)</li>
+          <li>3x infantry squads</li>
+          <li>platoon commander (warlord)</li>
+          <form>
+              <input type="checkbox" name="platoonCommander1" value="OldGrudges" id="platoonCommander1"><label for="platoonCommander1">WT - Old Grudges</label><br>
+              <input type="checkbox" name="platoonCommander2" value="GrandStrategist" id="platoonCommander2"><label for="platoonCommander2">WT - Grand Strategist</label><br>
+          </form>
+        </ul>
+        Scions (Iotan Dragons)
+        <ul>
+          <li>2x tempestor primes</li>
+          <li>3x scions (bare squads of 10)</li>
+        </ul>
+        Inquisitor
+        <ul>
+          <li>Order
+              <form>
+                <input type="checkbox" name="inquisitorOrdo1" value="Hereticus" id="inquisitorOrdo1"><label for="inquisitorOrdo1">Hereticus</label><br>
+              </form>
+          </li>
+          <li>Pyschic Power
+              <form>
+                <input type="checkbox" name="inquisitorPyschic1" value="Terrify" id="inquisitorPyschic1"><label for="inquisitorPyschic1">Terrify</label><br>
+              </form>
+          </li>
+          <li>Inquisitorial Mandate
+              <form>
+                <input type="checkbox" name="inquisitorTrait1" value="NoEscape" id="inquisitorTrait1" onclick="updateCount(this)"><label for="inquisitorTrait1">WT - No Escape</label><br>
+                <input type="checkbox" name="inquisitorTrait2" value="Blackshroud" id="inquisitorTrait2"><label for="inquisitorTrait2">Relic - Blackshroud</label><br>
+              </form>
+          </li>
+        </ul>
+    </div>
+  
+    <script>
+      var cpCount = 18;
+      window.onload = function(){
+        document.getElementById('output').innerHTML = cpCount;
+      };
+
+      function updateCount(checkboxInput) {
+
+        cpCount = cpCount + (checkboxInput.checked ? -1 : 1);
+
+        document.getElementById("output").innerHTML = cpCount;
+      }
+
+      //Code for collapsible menus
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+
+    </script>
+    </div>  
+  </body>
+</html>
