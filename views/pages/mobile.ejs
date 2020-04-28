@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+  <style>
+    
+  </style>
+
+
+</head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Cheat Sheet</h1>
+	</div><!-- /header -->
+  CP Count: <div id="cpCount"></div>
+
+
+    <div data-role="collapsible">
+      <h2>#1 Configure List</h2>
+      <h3>Sisters (bloody rose)</h3>      
+      <div class="ui-body ui-body-a ui-corner-all">
+
+        <h4>canoness #1</h4>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Relic:</legend>
+          <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" onclick="updateCount(this)">
+          <label for="checkbox-h-2a">Beneficense</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Warlord Trait:</legend>
+          <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" onclick="updateCount(this)">
+          <label for="checkbox-h-2a">Righteous Rage</label>
+          <input type="checkbox" name="checkbox-h-2b" id="checkbox-h-2b" onclick="updateCount(this)">
+          <label for="checkbox-h-2b">Indomitable Belief</label>
+        </fieldset>
+      <h4>canoness #2</h4>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Relic:</legend>
+          <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" onclick="updateCount(this)">
+          <label for="checkbox-h-2a">Litanies of Faith</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Warlord Trait:</legend>
+          <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" onclick="updateCount(this)">
+          <label for="checkbox-h-2a">Beacon of Faith</label>
+        </fieldset>
+      </div>
+
+        <div class="ui-body ui-body-a ui-corner-all">
+        <div class="ui-body ui-body-a">
+          <p>Content</p>
+        </div>
+      </div>
+
+
+
+
+
+        
+
+  
+    </div>
+    <div data-role="collapsible">
+      <h2>#2 View List</h2>
+      <p>Your list will appear here</p>
+    </div>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<script>
+  var cpCount = 18;
+  window.onload = function(){
+    document.getElementById('cpCount').innerHTML = cpCount;
+  };
+
+  function updateCount(checkboxInput) {
+    cpCount = cpCount + (checkboxInput.checked ? -1 : 1);
+    document.getElementById("cpCount").innerHTML = cpCount;
+  }
+</script>
+
+</body>
+</html>

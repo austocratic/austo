@@ -15,4 +15,9 @@ router.get('/checklist', (req, res)=>{
     res.render('pages/checklist')
 });
 
+//Jquery mobile version of checklist
+router.get('/mobile', (req, res)=>{
+    res.render('pages/mobile')
+});
+
 module.exports = router;
